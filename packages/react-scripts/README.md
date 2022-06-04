@@ -1,7 +1,18 @@
-# react-scripts
+# strivelen-react-scripts
 
-This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
-Please refer to its documentation:
+This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app). In addition, some other configurations are also included, as follows:
 
-- [Getting Started](https://facebook.github.io/create-react-app/docs/getting-started) – How to create a new app.
-- [User Guide](https://facebook.github.io/create-react-app/) – How to develop apps bootstrapped with Create React App.
+### new features
+
+- Support [Less](https://github.com/less/less.js) and Modular Less files.
+  
+
+### use
+
+  ```
+    # yarn:
+    yarn create react-app [YOURPROJECTNAME] --scripts-version strivelen-react-scripts
+
+    # npm:
+    npx create-react-app [YOURPROJECTNAME] --scripts-version strivelen-react-scripts
+  ```
