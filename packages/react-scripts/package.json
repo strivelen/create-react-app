@@ -1,7 +1,7 @@
 {
-  "name": "react-scripts",
+  "name": "strivelen-react-scripts",
   "version": "5.0.1",
-  "description": "Configuration and scripts for Create React App.",
+  "description": "strivelen Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/create-react-app.git",
@@ -66,6 +66,7 @@
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
+    "less-loader": "^11.0.0",
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
