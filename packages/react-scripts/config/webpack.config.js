@@ -615,7 +615,9 @@ module.exports = function (webpackEnv) {
                   loader: require.resolve('less-loader'),
                   options: {
                     sourceMap: true,
-                    javascriptEnabled: true
+                    lessOptions: {
+                      javascriptEnabled: true
+                    }
                   },
                 }
               ),
@@ -642,7 +644,9 @@ module.exports = function (webpackEnv) {
                   loader: require.resolve('less-loader'),
                   options: {
                     sourceMap: true,
-                    javascriptEnabled: true
+                    lessOptions: {
+                      javascriptEnabled: true
+                    }
                   },
                 }
               ),
