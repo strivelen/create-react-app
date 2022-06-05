@@ -178,7 +178,7 @@ module.exports = function (webpackEnv) {
         },
       },
     ].filter(Boolean);
-    if (preProcessor) {
+    if (preProcessor && typeof preProcessor === "string") {
       loaders.push(
         {
           loader: require.resolve('resolve-url-loader'),
@@ -193,6 +193,18 @@ module.exports = function (webpackEnv) {
             sourceMap: true,
           },
         }
+      );
+    }
+    if (preProcessor && typeof preProcessor === "object") {
+      loaders.push(
+        {
+          loader: require.resolve('resolve-url-loader'),
+          options: {
+            sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+            root: paths.appSrc,
+          },
+        },
+        preProcessor
       );
     }
     return loaders;
@@ -599,7 +611,13 @@ module.exports = function (webpackEnv) {
                     mode: 'icss',
                   },
                 },
-                'less-loader'
+                {
+                  loader: require.resolve('less-loader'),
+                  options: {
+                    sourceMap: true,
+                    javascriptEnabled: true
+                  },
+                }
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -620,7 +638,13 @@ module.exports = function (webpackEnv) {
                     getLocalIdent: getCSSModuleLocalIdent,
                   },
                 },
-                'less-loader'
+                {
+                  loader: require.resolve('less-loader'),
+                  options: {
+                    sourceMap: true,
+                    javascriptEnabled: true
+                  },
+                }
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
